@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>PrimeTix</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+   
+    
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div id="dropdownModal" class="dropdown-modal">
+        <div class="dropdown-modal-content">
+            <h2>Select Your City</h2>
+            <select id="citySelect" class="form-select">
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Bengaluru">Bengaluru</option>
+            </select>
+            <br><br>
+            <button class="btn btn-primary" onclick="selectCity()">Submit</button>
+        </div>
+    </div>
+        <div class="overlay"></div>
+
+        
+        <div class="content">
+
+            <nav class="navbar">
+                <img src="img/logo.png" class="brand-logo" alt="" />
+                <div class="right-container">
+                    <a class="location" onclick="toggleCityModal()">
+                        Chandigarh <ion-icon name="caret-down-sharp"></ion-icon>
+                    </a>
+                    
+                    <div class="right-container">
+                        <a href="#" class="signin" onclick="document.getElementById('id01').style.display='block'">
+                            <img src="./img/avatar.png" alt="Avatar">
+                        </a>
+                    </div>
+                </div>
+            </nav>
+                    
+
+                    <div id="id01" class="modal">
+
+                        <div class="modal-content">
+                            <div class="getstart">
+                                <h3>Get Started</h3>
+                                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                                    title="Close Modal">
+                                    <ion-icon name="close-outline"></ion-icon>
+                                </span>
+                            </div>
+
+                            <div class="container">
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <img src="img/googlelogo.svg">
+                                    </div>
+                                    <div class="text">Continue with Google</div>
+                                </a>
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <ion-icon name="mail-outline" style="font-size: 22px;"></ion-icon>
+                                    </div>
+                                    <div class="text">Continue with Email</div>
+                                </a>
+                                <a href="#" class="button">
+                                    <div class="logo">
+                                        <ion-icon name="logo-apple" style="font-size: 22px;"></ion-icon>
+                                    </div>
+                                    <div class="text">Continue with Apple</div>
+                                </a>
+                            </div>
+                            <h2>OR</h2>
+
+                            <div class="phone">
+                                <img alt="indian flag" src="img/indianflag.svg">
+                                <div class="code">+91</div>
+                                <input id="mobileNo" type="tel" pattern="[0-9]*"
+                                    placeholder="Continue with mobile number" class="mobileNo">
+                            </div>
+
+                            <p>I agree to the <u>Terms & Conditions</u>&<u>Privacy Policy</u></p>
+
+                        </div>
+
+                    </div>
+                   
+                    <div class="box">
+                        <div class="film">
+                            <iframe class="frame" id="movie-trailer" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            <div class="patta">
+                                <img src="" class="patta-img" alt="">
+                                <div class="patta-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <h3 id="first-movie-title"></h3>
+                            <p class="barik" id="first-movie-genre"></p>
+                            <button class="book" type="button" onclick="window.location.href='../booking seats/booking_seats.html'"><span>Book Now</span></button>
+                        </div>
+                    </div>
+</div>
+</div>
+</body>
+            </nav>
+            <script src="js/data.js"></script>
+            <script src="js/app.js"></script>
+
+            <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width,initial-scale=1.0">
+                <title>PrimeTix</title>
+                <link rel="icon" type="image/x-icon" href="logo.png">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"/>
+                
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+                <link rel="stylesheet" href="style.css">
+                
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            </head>
+            <body>
+                <h1 class="title">Now Showing 🎬</h1>
+                <div class="movies-list" id="movies-container">
+                    <div class="card-container">
+                        <a href="movie1.html" class="movie">
+                            <div class="card">
+                                <img src="" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <h3></h3>
+                            <p class="detail"></p>
+                        </a>
+                        <a href="movie2.html" class="movie">
+                            <div class="card">
+                                <img src="" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <h3></h3>
+                            <p class="detail"></p>
+                        </a>
+                        <a href="movie3.html" class="movie">
+                            <div class="card">
+                                <img src="" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p> 
+                                </div>
+                            </div>
+                            <h3></h3>
+                            <p class="detail"></p>
+                        </a>
+                        <a href="movie4.html" class="movie">
+                            <div class="card">
+                                <img src="" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <h3></h3>
+                            <p class="detail"></p>
+                        </a>
+                        <a href="movie5.html" class="movie">
+                            <div class="card">
+                                <img src="" class="card-img" alt="">
+                                <div class="card-body">
+                                    <ion-icon name="heart-sharp"></ion-icon>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <h3></h3>
+                            <p class="detail"></p>
+                        </a>
+                    </div>
+                </div>
+                
+            
+                <script>
+    $(document).ready(function () {
+        const apiKey = 'f32610b2df41c32a0a769a49ed760862';
+        const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1&region=IN`;
+
+   
+        $.get(apiUrl, function (data) {
+            const movies = data.results.slice(0, 5);
+            updateMovieCards(movies);
+            if (movies.length > 0) {
+                fetchMovieTrailer(movies[0].id);
+                updateFirstMovieDetails(movies[0]);
+                document.title = movies[0].title;
+            }
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            console.error("Error fetching data: ", textStatus, errorThrown);
+        });
+
+
+        function updateMovieCards(movies) {
+    $('#movies-container .card-container').empty(); 
+    const staticLinks = [
+        'movie1.html',
+        'movie2.html',
+        'movie3.html',
+        'movie4.html',
+        'movie5.html'
+    ]; 
+
+    movies.forEach((movie, index) => {
+        const imgSrc = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+        const title = movie.title;
+        const genres = movie.genre_ids.map(getGenreById).join('/') || 'Unknown Genre';
+        const rating = (movie.vote_average * 10).toFixed(0);
+        const movieLink = staticLinks[index]; 
+
+        const movieCard = `
+            <a href="${movieLink}" class="movie" data-id="${movie.id}">
+                <div class="card">
+                    <img src="${imgSrc}" class="card-img" alt="${title}">
+                    <div class="card-body">
+                        <ion-icon name="heart-sharp" class="heart-icon" style="cursor: pointer;" onclick="toggleFavorite(event)"></ion-icon>
+                        <p>${rating}%</p>
+                    </div>
+                </div>
+                <h3>${title}</h3>
+                <p class="detail">${genres}</p>
+            </a>
+        `;
+        $('#movies-container .card-container').append(movieCard);
+    });
+        }
+
+   
+function updateFirstMovieDetails(movie) {
+    const imgSrc = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const rating = (movie.vote_average * 10).toFixed(0);
+  
+    $('#first-movie-title').text(movie.title);
+    $('#first-movie-genre').text(movie.genre_ids.map(id => getGenreById(id)).join('/') || 'Unknown Genre');
+    $('#movie-trailer').attr('src', `https://www.youtube.com/embed/${movie.trailer_id}`); 
+
+    $('.patta-img').attr('src', imgSrc);
+    $('.patta-body p').text(`${rating}%`);
+}
+
+
+        function getGenreById(id) {
+            const genreMapping = {
+                28: 'Action',
+                12: 'Adventure',
+                16: 'Animation',
+                35: 'Comedy',
+                80: 'Crime',
+                99: 'Documentary',
+                18: 'Drama',
+                14: 'Fantasy',
+                27: 'Horror',
+                10402: 'Music',
+                9648: 'Mystery',
+                10749: 'Romance',
+                878: 'Science Fiction',
+                10770: 'TV Movie',
+                53: 'Thriller',
+                10752: 'War',
+                37: 'Western',
+            };
+            return genreMapping[id] || 'Unknown Genre';
+        }
+
+        $('#movies-container').on('click', '.movie', function (event) {
+            const movieId = $(this).data('id');
+            fetchMovieTrailer(movieId);
+        });
+  
+      
+        function fetchMovieTrailer(movieId) {
+            const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`;
+            $.get(trailerUrl, function (data) {
+                const trailer = data.results.find(video => video.type === 'Trailer');
+                if (trailer) {
+                    $('#movie-trailer').attr('src', `https://www.youtube.com/embed/${trailer.key}`);
+                } else {
+                    console.warn("No trailer found for this movie.");
+                }
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                console.error("Error fetching trailer: ", textStatus, errorThrown);
+            });
+        }
+    });
+
+    
+    function toggleFavorite(event) {
+        const heartIcon = event.target;
+        heartIcon.classList.toggle('favorite');
+    }
+
+  
+    function selectCity() {
+    var city = document.getElementById('citySelect').value;
+    document.querySelector('.location').innerHTML = city + ' <ion-icon name="caret-down-sharp"></ion-icon>';
+    document.getElementById('dropdownModal').style.display = 'none';
+}
+window.onclick = function(event) {
+    var dropdownModal = document.getElementById('dropdownModal');
+    var signinModal = document.getElementById('id01');
+
+    if (event.target == dropdownModal) {
+        dropdownModal.style.display = 'none';
+    }
+    if (event.target == signinModal) {
+        signinModal.style.display = 'none';
+    }
+
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (event.target !== dropdownMenu && !dropdownMenu.contains(event.target) && !event.target.matches('.location')) {
+        dropdownMenu.style.display = 'none';
+    }
+};
+function toggleCityModal() {
+    var dropdownModal = document.getElementById('dropdownModal');
+    dropdownModal.style.display = 'flex';  
+}
+    </script>
+            </body>
+
+            <h1 class="title-enter">The Best of Entertainment</h1>
+            <div class="enter-list">
+                <div class="enter-container">
+
+                    <div class="card">
+                        <img src="img/enter/enter1.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter2.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter3.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter4.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter5.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter6.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter7.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter8.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter9.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter10.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter11.webp" class="card-img" alt="">
+                    </div>
+
+                    <div class="card">
+                        <img src="img/enter/enter12.webp" class="card-img" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
